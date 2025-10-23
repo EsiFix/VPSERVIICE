@@ -39,6 +39,6 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.github.schwabe:ics-openvpn:v0.7.37")
+    implementation("com.github.schwabe:ics-openvpn:v0.7.31")
     // موتور OpenVPN و شبکه را بعداً اضافه می‌کنیم
 }
