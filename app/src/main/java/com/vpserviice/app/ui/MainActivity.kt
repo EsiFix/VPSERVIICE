@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnServers.setOnClickListener {
-            // TODO: لیست سرورها + Connect/Disconnect
+    startActivity(Intent(this, ConnectActivity::class.java))
         }
     }
 }
