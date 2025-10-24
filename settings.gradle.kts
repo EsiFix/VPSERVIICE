@@ -17,3 +17,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "VPSERVIICE"
 include(":app")
+
+sourceControl {
+    gitRepository(uri("https://github.com/schwabe/ics-openvpn")) {
+        // این خط به Gradle می‌گوید چه ماژولی از این ریپو تولید می‌شود
+        producesModule("de.blinkt.openvpn:openvpn")
+    }
+}
