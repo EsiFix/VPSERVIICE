@@ -1,38 +1,58 @@
-# Android VPN Client Setup Guide
+IyBBbmRyb2lkIFZQTiBDbGllbnQgU2V0dXAgR3VpZGUKCiMjIEluc3RhbGxh
+dGlvbiBTdGVwcwoKMS4gKipEb3dubG9hZCB0aGUgQVBLKiogIAogICBWaXNp
+dCB0aGUgb2ZmaWNpYWwgd2Vic2l0ZSBvciB0cnVzdGVkIHNvdXJjZSB0aG9u
+ZSB0aGUgQW5kcm9pZCBWUE4gY2xpZW50IEFQSyBmaWxlLgoKMi4gKipFbmFi
+bGUgVW5rbm93biBTb3VyY2VzKiogIAogICAtIEdvIHRvIHlvdXIgZGV2aWNl
+J3MgKipTZXR0aW5ncyoqLiAgCiAgIC0gTmF2aWdhdGUgdG8gKipTZWN1cml0
+eSogCiAgICAtIEVuYWJsZSArKkVuYWJsZSBVbmtub3duIFNv
+dXJjZXM6Kip0byBh
+bGxvdw==
 
-## Installation Steps
+## WireGuard Installation
 
-1. **Download the APK**  
-   Visit the official website or trusted source to download the Android VPN client APK file.
+### Step 1: Install WireGuard
 
-2. **Enable Unknown Sources**  
-   - Go to your device's **Settings**.  
-   - Navigate to **Security**.  
-   - Enable **Unknown Sources** to allow installation from sources other than the Google Play Store.
+To install WireGuard, you can use the package manager for your operating system. For example, on Ubuntu, you can run:
 
-3. **Install the APK**  
-   - Locate the downloaded APK file in your device's **Downloads** folder.  
-   - Tap on the APK file to begin the installation.  
-   - Follow the on-screen instructions to complete the installation.
+```bash
+sudo apt install wireguard
+```
 
-4. **Open the VPN Client**  
-   - Once installed, open the VPN client from your app drawer.
+### Step 2: Configure WireGuard
 
-5. **Configure VPN Settings**  
-   - Enter your VPN credentials (username and password).
-   - Select the desired server location.
-   - Adjust any additional settings as needed.
+After installation, you need to configure WireGuard. Create a configuration file at `/etc/wireguard/wg0.conf`:
 
-6. **Connect to the VPN**  
-   - Tap the **Connect** button to establish a VPN connection.
-   - Wait for the connection to be confirmed.
+```ini
+[Interface]
+PrivateKey = <your_private_key>
+Address = 10.0.0.1/24
 
-7. **Verify the Connection**  
-   - Check your IP address using an online service to ensure that your VPN is working correctly.
+[Peer]
+PublicKey = <peer_public_key>
+Endpoint = <peer_ip>:<peer_port>
+AllowedIPs = 10.0.0.2/32
+```
 
-8. **Disconnecting the VPN**  
-   - To disconnect, open the VPN client and tap the **Disconnect** button.
+### Step 3: Start WireGuard
 
-## Troubleshooting
-- If you encounter issues, ensure that your internet connection is stable and that you have entered the correct credentials.
-- Restart the app or your device if problems persist.
+To start the WireGuard interface, run:
+
+```bash
+sudo wg-quick up wg0
+```
+
+### Step 4: Enable WireGuard on Boot
+
+To enable WireGuard to start on boot, use:
+
+```bash
+sudo systemctl enable wg-quick@wg0
+```
+
+### Step 5: Verify the Installation
+
+You can verify that WireGuard is running by checking the status:
+
+```bash
+sudo systemctl status wg-quick@wg0
+```
