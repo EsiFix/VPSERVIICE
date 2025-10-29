@@ -1,49 +1,53 @@
-# Setup Guide for Installing an Android VPN Client
+IyBTZXR1cCBHdWlkZSBmb3IgSW5zdGFsbGluZyBhbiBBbmRyb2lkIFZQTiBD
+bGllbnQKCiMjIEludHJvZHVjdGlvbgpUaGlzIGd1aWRlIHByb3ZpZGVzIHN0
+ZXAtYnktc3RlcCBpbnN0cnVjdGlvbnMgZm9yIGluc3RhbGxpbmcgYSBWUE4g
+Y2xpZW50IG9uIHlvdXIgQW5kcm9pZCBkZXZpY2UuIEEgVlBOIChWaXJ0dWFs
+IFByaXZhdGUgTmV0d29yaykgaGVscHMgdG8gc2VjdXJlIHlvdXIgaW50ZXJu
+ZXQgY29ubmVjdGlvbiBhbmQgcHJvdGVjdCB5b3VyIG9ubGluZSBwcml2YWN5
+LgoKIyMgUHJlcmVxdWlzaXRlcwotIEFuIEFuZHJvaWQgZGV2aWNlIChzbWFy
+dHBob25lIG9yIHRhYmxldCkKLSBBIHN0YWJsZSBpbnRlcm5ldCBjb25uZWN0
+aW9uCi0gQSBWUE4gc2VydmljZSBzdWJzY3JpcHRpb24gKGlmIHJlcXVpcmVk
+KQoKIyMgSW5zdHJ1Y3Rpb25zCgojIyMgU3RlcCAxOiBPcGVuIEdvb2dsZSBQ
+bGF5IFN0b3JlCjEuIFVubG9jayB5b3VyIEFuZHJvaWQgZGV2aWNlLgoyLiBM
+b2NhdGUgYW5kIHRhcCBvbiB0aGUgKipHb29nbGUgUGxheSBTdG9yZSoqIGFw
+cC4KCiMjIyBTdGVwIDI6IFNlYXJjaCBmb3IgYSBWUE4gQ2xpZW50CjEuIElu
+IHRoZSBzZWFyY2ggYmFyIGF0IHRoZSB0b3AsIHR5cGUgdGhlIG5hbWUgb2Yg
+dGhlIFZQTiBjbGllbnQgeW91IHdhbnQgdG8gaW5zdGFsbCAoZS5nLiwgIk5v
+cmRWUE4iLCAiRXhwcmVzc1ZQTiIsIGV0Yy4pLgoyLiBQcmVzcyB0aGUgKipT
+ZWFyY2gqKiBpY29uLgoKIyMjIFN0ZXAgMzogU2VsZWN0IHRoZSBWUE4gQ2xp
+ZW50CjEuIEZyb20gdGhlIHNlYXJjaCByZXN1bHRzLCBmaW5kIHRoZSBWUE4g
+Y2xpZW50IHlvdSB3YW50IHRvIGluc3RhbGwuCjIuIFRhcCBvbiB0aGUgYXBw
+IHRvIG9wZW4gaXRzIGRldGFpbHMgcGFnZS4KCiMjIyBTdGVwIDQ6IEluc3Rh
+bGwgdGhlIFZQTiBDbGllbnQKMS4gT24gdGhlIGFwcCBkZXRhaWxzIHBhZ2Us
+IHRhcCB0aGUgKipJbnN0YWxsKiogYnV0dG9uLgoyLiBXYWl0IGZvciB0aGUg
+YXBwIHRvIGRvd25sb2FkIGFuZCBpbnN0YWxsIG9uIHlvdXIgZGV2aWNlLgoK
+IyMjIFN0ZXAgNTogT3BlbiB0aGUgVlBOIENsaWVudAoxLiBPbmNlIGluc3Rh
+bGxlZCwgdGFwIHRoZSAqKk9wZW4qKiBidXR0b24gZGlyZWN0bHkgZnJvbSB0
+aGUgUGxheSBTdG9yZSwgb3IgZmluZCB0aGUgYXBwIGljb24gaW4geW91ciBh
+cHAgZHJhd2VyLgoKIyMjIFN0ZXAgNjogU2lnbiBJbiBvciBDcmVhdGUgYW4g
+QWNjb3VudAoxLiBJZiB5b3UgYWxyZWFkeSBoYXZlIGFuIGFjY291bnQsIGVu
+dGVyIHlvdXIgY3JlZGVudGlhbHMgYW5kIGxvZyBpbi4KMi4gSWYgeW91IGRv
+buKAmXQgaGF2ZSBhbiBhY2NvdW50LCBmb2xsb3cgdGhlIHByb21wdHMgdG8g
+Y3JlYXRlIG9uZS4KCiMjIyBTdGVwIDc6IENvbmZpZ3VyZSB0aGUgVlBOIFNl
+dHRpbmdzCjEuIEZvbGxvdyB0aGUgb24tc2NyZWVuIGluc3RydWN0aW9ucyB0
+byBzZXQgdXAgdGhlIFZQTi4KMi4gWW91IG1heSBuZWVkIHRvIGdyYW50IHRo
+ZSBhcHAgcGVybWlzc2lvbnMgdG8gY29uZmlndXJlIHRoZSBWUE4gc2V0dGlu
+Z3Mgb24geW91ciBkZXZpY2UuCgojIyMgU3RlcCA4OiBDb25uZWN0IHRvIHRo
+ZSBWUE4KMS4gT25jZSBjb25maWd1cmVkLCB0YXAgdGhlICoqQ29ubmVjdCoq
+IGJ1dHRvbiB3aXRoaW4gdGhlIGFwcC4KMi4gV2FpdCBmb3IgdGhlIGNvbm5l
+Y3Rpb24gdG8gZXN0YWJsaXNoLiBZb3Ugc2hvdWxkIHNlZSBhIG5vdGlmaWNh
+dGlvbiBpbmRpY2F0aW5nIHRoYXQgeW91IGFyZSBjb25uZWN0ZWQuCgojIyMg
+U3RlcCA5OiBWZXJpZnkgWW91ciBDb25uZWN0aW9uCjEuIFlvdSBjYW4gdmVy
+aWZ5IHlvdXIgVlBOIGNvbm5lY3Rpb24gYnkgY2hlY2tpbmcgeW91ciBJUCBh
+ZGRyZXNzIHRocm91Z2ggYSB3ZWIgc2VydmljZSBsaWtlIGB3aGF0aXNteWlw
+LmNvbWAuCjIuIEVuc3VyZSB0aGF0IHlvdXIgSVAgYWRkcmVzcyByZWZsZWN0
+cyB0aGUgVlBOIHNlcnZlciBsb2NhdGlvbi4KCiMjIENvbmNsdXNpb24KWW91
+IGhhdmUgc3VjY2Vzc2Z1bGx5IGluc3RhbGxlZCBhbmQgY29uZmlndXJlZCBh
+IFZQTiBjbGllbnQgb24geW91ciBBbmRyb2lkIGRldmljZS4gRW5qb3kgc2Vj
+dXJlIGFuZCBwcml2YXRlIGJyb3dzaW5nIQ==
 
-## Introduction
-This guide provides step-by-step instructions for installing a VPN client on your Android device. A VPN (Virtual Private Network) helps to secure your internet connection and protect your online privacy.
-
-## Prerequisites
-- An Android device (smartphone or tablet)
-- A stable internet connection
-- A VPN service subscription (if required)
-
-## Instructions
-
-### Step 1: Open Google Play Store
-1. Unlock your Android device.
-2. Locate and tap on the **Google Play Store** app.
-
-### Step 2: Search for a VPN Client
-1. In the search bar at the top, type the name of the VPN client you want to install (e.g., "NordVPN", "ExpressVPN", etc.).
-2. Press the **Search** icon.
-
-### Step 3: Select the VPN Client
-1. From the search results, find the VPN client you want to install.
-2. Tap on the app to open its details page.
-
-### Step 4: Install the VPN Client
-1. On the app details page, tap the **Install** button.
-2. Wait for the app to download and install on your device.
-
-### Step 5: Open the VPN Client
-1. Once installed, tap the **Open** button directly from the Play Store, or find the app icon in your app drawer.
-
-### Step 6: Sign In or Create an Account
-1. If you already have an account, enter your credentials and log in.
-2. If you don’t have an account, follow the prompts to create one.
-
-### Step 7: Configure the VPN Settings
-1. Follow the on-screen instructions to set up the VPN.
-2. You may need to grant the app permissions to configure the VPN settings on your device.
-
-### Step 8: Connect to the VPN
-1. Once configured, tap the **Connect** button within the app.
-2. Wait for the connection to establish. You should see a notification indicating that you are connected.
-
-### Step 9: Verify Your Connection
-1. You can verify your VPN connection by checking your IP address through a web service like `whatismyip.com`.
-2. Ensure that your IP address reflects the VPN server location.
-
-## Conclusion
-You have successfully installed and configured a VPN client on your Android device. Enjoy secure and private browsing!
+## Troubleshooting
+- If the VPN app can’t connect, verify server address, port, and protocol (UDP/TCP).
+- Check that your .ovpn/.conf file is imported correctly and certificates are valid.
+- On Android 13+, allow the app to run in background and disable battery optimizations.
+- If DNS leak occurs, enable "Block connections without VPN" in Android settings.
